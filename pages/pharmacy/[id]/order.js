@@ -40,7 +40,7 @@ export default function Home() {
       <main>
         {purchaseHistory[id] ? (
           <div>
-            We're sorry you have already made an order from this pharmacy
+            We&apos;re sorry you have already made an order from this pharmacy
           </div>
         ) : (
           <>
