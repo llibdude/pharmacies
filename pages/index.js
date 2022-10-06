@@ -14,17 +14,17 @@ export default function Home() {
     }
   );
 
-  // TODO: Handle errors gracefully. Handle isLoading with ghost component
-  if (isError || isLoading) {
-    return;
-  }
-
   useEffect(() => {
     const computeClosestPharmacy = () => {
       // TODO: Compute closest pharmacy
     };
     computeClosestPharmacy();
   }, pharmacies);
+
+  // TODO: Handle errors gracefully. Handle isLoading with ghost component
+  if (isError || isLoading) {
+    return;
+  }
 
   return (
     <div>
