@@ -1,6 +1,17 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+## Notes from William Gordon
+
+This is written in NextJS, the data fetching can be found in the /hooks directory which calls on NextJS's dynamic api routes found in pages/api
+
+## Incomplete project
+
+I was unable to have the time to caluclate closest pharmacy as I had intended to come back to it at the end.
+
+My issues arose when I tried to use a localStorage hook that is not actually saving to localStorage for me.
+In hindsight I should have gone with a context-based state for state management, or just used native local storage.
 
 ## Getting Started
+
+This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 First, run the development server:
 
