@@ -43,7 +43,7 @@ const PharmcyDetailsPage = () => {
             <div className="font-medium text-xl">Purchase History</div>
             <ul>
               {purchaseHistory[id].map((purch) => {
-                return <li>{purch}</li>;
+                return <li key={purch}>{purch}</li>;
               })}
             </ul>
           </div>
