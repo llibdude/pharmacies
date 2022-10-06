@@ -2,24 +2,16 @@ import Head from "next/head";
 import PharmacyList from "../components/PharmacyList";
 import usePharmaciesList from "../hooks/usePharmacies";
 import useLocalStorageState from "use-local-storage-state";
-import { useEffect } from "react";
+import { useRouter } from "next/router";
 
 export default function Home() {
   const { pharmacies, isError, isLoading } = usePharmaciesList([]);
 
-  const [purchaseHistory, setPurchaseHistory] = useLocalStorageState(
-    "purchase_history",
-    {
-      defaultValue: {},
-    }
-  );
+  const router = useRouter();
 
-  useEffect(() => {
-    const computeClosestPharmacy = () => {
-      // TODO: Compute closest pharmacy
-    };
-    computeClosestPharmacy();
-  }, pharmacies);
+  const [purchaseHistory] = useLocalStorageState("purchase_history", {
+    defaultValue: {},
+  });
 
   // TODO: Handle errors gracefully. Handle isLoading with ghost component
   if (isError || isLoading) {
@@ -33,11 +25,18 @@ export default function Home() {
       </Head>
 
       <main>
-        <button>Order from pharmacy closest to me!</button>
-        <PharmacyList
-          pharmacies={pharmacies}
-          purchaseHistory={purchaseHistory}
-        />
+        <div className="max-w-[500px] m-auto">
+          <button
+            className="mb-2"
+            onClick={() => router.push(`/pharmacy/${pharmacies.closest}/order`)}
+          >
+            Order from pharmacy closest to me!
+          </button>
+          <PharmacyList
+            pharmacies={pharmacies.pharmacies}
+            purchaseHistory={purchaseHistory}
+          />
+        </div>
       </main>
     </div>
   );

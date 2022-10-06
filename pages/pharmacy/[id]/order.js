@@ -16,10 +16,10 @@ export default function Home() {
 
   // Store medications purchased by store
   const handlePurchase = (medications) => {
-    setPurchaseHistory = {
+    setPurchaseHistory({
       ...purchaseHistory,
       [id]: medications,
-    };
+    });
 
     router.push("/");
   };
