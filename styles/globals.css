@@ -5,3 +5,7 @@
 html {
   @apply bg-primary text-primary
 }
+
+button {
+  @apply border p-2 rounded-full hover:bg-secondary w-fit
+}
